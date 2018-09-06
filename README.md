@@ -5,18 +5,21 @@ Collecting data by using <b>CryptoCompare API</b> and <b>Guardian API</b>. <br>
 * Retrieving all pieces of content on Bitcoin published by Guardian since 2017-04-01
 
 ## Two API sources were chosen for this project, provided by:
+<ol>
+  <li>https://www.cryptocompare.com/api/#introduction Specifically, the historic 'HistoDay' daily data API - https://www.cryptocompare.com/api/#-api-data-histoday <br>
 
-1) https://www.cryptocompare.com/api/#introduction Specifically, the historic 'HistoDay' daily data API - https://www.cryptocompare.com/api/#-api-data-histoday
+--> Retrieves open, high, low, close, volumefrom and volumeto daily historical data for cryptocurrency of your choice. The values are based on 00:00 GMT time. It uses BTC conversion if data is not available because the coin is not trading in the specified currency.</li>
+  <li>http://open-platform.theguardian.com/ Specifically, all pieces of content on Bitcoin published in last year (since 2017-04-01) in the API - https://content.guardianapis.com/search?q=bitcoin&from-date=2017-04-01&to-date=2018-03-31&order-by=newest&show-fields=all&page-size=200&api-key=9d7f80a7-70ae-4b38-b22b-7a0c58c31c16 <br>
 
---> Retrieves open, high, low, close, volumefrom and volumeto daily historical data for cryptocurrency of your choice. The values are based on 00:00 GMT time. It uses BTC conversion if data is not available because the coin is not trading in the specified currency.
+How it works: The Open Platform is a public web service for accessing all the content the Guardian creates, categorised by tags and section. To get started, You need an key to successfully authenticate against the API. The level of access I chose is Developer as it is free for non-commercial usage. I have register developer key at https://bonobo.capi.gutools.co.uk/register/developer<br>
 
-2) http://open-platform.theguardian.com/ Specifically, all pieces of content on Bitcoin published in last year (since 2017-04-01) in the API - https://content.guardianapis.com/search?q=bitcoin&from-date=2017-04-01&to-date=2018-03-31&order-by=newest&show-fields=all&page-size=200&api-key=9d7f80a7-70ae-4b38-b22b-7a0c58c31c16
+(Up to 12 calls per second, Up to 5,000 calls per day, Access to article text, Access to over 1,900,000 pieces of content, Free for non-commercial usage)<br>
 
-How it works: The Open Platform is a public web service for accessing all the content the Guardian creates, categorised by tags and section. To get started, You need an key to successfully authenticate against the API. The level of access I chose is Developer as it is free for non-commercial usage. I have register developer key at https://bonobo.capi.gutools.co.uk/register/developer
+The API key I received which works here is 9d7f80a7-70ae-4b38-b22b-7a0c58c31c16<br>
+</li>
+  
+</ol>
 
-(Up to 12 calls per second, Up to 5,000 calls per day, Access to article text, Access to over 1,900,000 pieces of content, Free for non-commercial usage)
-
-The API key I received which works here is 9d7f80a7-70ae-4b38-b22b-7a0c58c31c16
 
 ## Collecting data via API(s) & Parsing the collected data, and storing it in an appropriate file format
 <b>CryptoCompare API Parameters</b> <br>
