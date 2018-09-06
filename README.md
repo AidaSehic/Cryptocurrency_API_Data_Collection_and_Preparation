@@ -19,21 +19,21 @@ How it works: The Open Platform is a public web service for accessing all the co
 The API key I received which works here is 9d7f80a7-70ae-4b38-b22b-7a0c58c31c16
 
 ## Collecting data via API(s) & Parsing the collected data, and storing it in an appropriate file format
-<b>CryptoCompare API Parameters</b>
-Endpoint URL: https://min-api.cryptocompare.com/data/histoday?
-fsym - REQUIRED The cryptocurrency symbol of interest [Max character length: 10] --> BTC and ETH
-tsym - REQUIRED The currency symbol to convert into [Max character length: 10] --> I have selected EUR
-limit - The number of data points to return --> 364 (returns 365 days of data)
-toTs - Last unix timestamp to return data for --> 1522454400 (equivalent to 2018-03-31)
+<b>CryptoCompare API Parameters</b> <br>
+Endpoint URL: https://min-api.cryptocompare.com/data/histoday?<br>
+fsym - REQUIRED The cryptocurrency symbol of interest [Max character length: 10] --> BTC and ETH<br>
+tsym - REQUIRED The currency symbol to convert into [Max character length: 10] --> I have selected EUR<br>
+limit - The number of data points to return --> 364 (returns 365 days of data)<br>
+toTs - Last unix timestamp to return data for --> 1522454400 (equivalent to 2018-03-31)<br>
 
-<b>The Guardian API Parameters</b>
-Endpoint URL: https://content.guardianapis.com/search
-api-key - The API key used for the query (retrieved key for which I registered) --> mine is 9d7f80a7-70ae-4b38-b22b-7a0c58c31c16
-q - Request content containing this free text. Supports AND, OR and NOT operators, and exact phrase queries using double quotes. --> bitcoin
+<b>The Guardian API Parameters</b><br>
+Endpoint URL: https://content.guardianapis.com/search<br>
+api-key - The API key used for the query (retrieved key for which I registered) --> mine is 9d7f80a7-70ae-4b38-b22b-7a0c58c31c16<br>
+q - Request content containing this free text. Supports AND, OR and NOT operators, and exact phrase queries using double quotes. --> bitcoin<br>
 use-date - Changes which type of date is used to filter the results using from-date (2017-04-01) and to-date (2018-03-31)
-order-by Returns results in the specified order (relevance - Default where q parameter is specified, oldest, newest - Default in all other cases) --> I have slected newest, as default would be relevance due to the fact that q is specified
-show-fields - Add fields associated with the content --> all
-page-size - Modify the number of items displayed per page --> 200
+order-by Returns results in the specified order (relevance - Default where q parameter is specified, oldest, newest - Default in all other cases) --> I have slected newest, as default would be relevance due to the fact that q is specified <br>
+show-fields - Add fields associated with the content --> all<br>
+page-size - Modify the number of items displayed per page --> 200<br>
 
 ## Loading and representing the data using an appropriate data structure. Appling pre-processing steps to clean/filter/combine the data
 
@@ -47,4 +47,15 @@ I have loaded and represented data as a Pandas DataFrame. Some of the pre-proces
 
 
 ## Analysing and summarising the cleaned dataset
+I have preformed analyses on the cleaned dataset, using tables and plots where appropriate, eg 
+* Bitcoing and Etherium Closing Price Trend over One Year, 
+* OHLC charts (OHLC charts are a visual aid for decision making in trading as it identifies trends),
+* Bitcoin: Number of Published Articles vs Changes in Price, etc
 
+## What further analysis might be done on the data?
+Further in-depth studies and tests could be carried out to make statistically significant results.
+
+* Preforming sentiment analysis on Guardian data via neural networks in order to conclude what type of news (positive or negative) have influence on prices
+* Retrieving additional data from CryptoCompare and Guardian for other cryptocurrencies and observing even larger chunk of historical data.
+* Retrieving additional metrics around market cap and volume 24h to get a better scope of the problem I observe
+* Calculating Pearson correlation coefficient between different cryptocurrencies in order to conclude weather their price changes are correlated
